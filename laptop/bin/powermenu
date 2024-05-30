@@ -3,14 +3,14 @@
 uptime="Uptime: $(uptime -p | sed -e 's/up //g')"
 
 # Options
-poweroff=' Poweroff'
-reboot=' Reboot'
-lock=' Lock'
-suspend='鈴 Suspend'
-logout=' Logout'
+poweroff='🗿  Poweroff'
+reboot='🚬  Reboot'
+lock='🔒  Lock'
+suspend='😴  Suspend'
+logout='🏃  Logout'
 
-yes=' Yes'
-no=' No'
+yes='✅ Yes'
+no='❌ No'
 
 # Rofi CMD
 rofi_cmd() {
@@ -22,7 +22,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	printf "$poweroff\n$suspend\n$logout\n$reboot\n$lock\n" | rofi_cmd "$1"
+	printf "$poweroff\n$reboot\n$suspend\n$logout\n$lock\n" | rofi_cmd "$1"
 }
 
 confirm() {
@@ -42,7 +42,6 @@ run_cmd() {
 		  systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
 			if [[ "$DESKTOP_SESSION" == 'awesome' ]]; then
-				killall gammastep
 				echo 'awesome.quit()' | awesome-client
 			fi
 		elif [[ $1 == '--lock' ]]; then
