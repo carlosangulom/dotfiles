@@ -84,6 +84,10 @@ local GLOBAL_GROUPS = {
 				{
 					key = "b",
 					action= bind(awful.spawn, {"brave --incognito --password-store=basic"}), description = "open brave with incognito window"
+				},
+				{
+					key = "s",
+					action= bind(awful.spawn, {"spotify"}), description = "open spotify"
 				}
 			},
 		},
